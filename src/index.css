@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.navbar_whole {
+  width: -webkit-fill-available;
+  z-index: 9999999;
+}
