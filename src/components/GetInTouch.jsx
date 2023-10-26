@@ -1,6 +1,40 @@
-import React from "react";
-
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 export const GetInTouch = () => {
+  const form = useRef();
+  const [formvalue, setFormValue] = useState({
+    from_name: "",
+    user_email: "",
+    message: "",
+  });
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setFormValue({
+      ...formvalue,
+      [name]: value,
+    });
+  };
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ikp2l1m",
+        "template_z6yev2z",
+        formvalue,
+        "Rku31VSpu0LSHrRIa"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    console.log(formvalue, "its a formvalue");
+  };
+
   return (
     <div style={{ marginTop: "57px" }}>
       <div className="container">
@@ -29,6 +63,7 @@ export const GetInTouch = () => {
                     borderRadius: "12px",
                     outline: "none",
                   }}
+                  onChange={handleChange}
                 />
                 <input
                   type="email"
@@ -41,6 +76,7 @@ export const GetInTouch = () => {
                     borderRadius: "12px",
                     outline: "none",
                   }}
+                  onChange={handleChange}
                 />
                 <textarea
                   name="Your Message"
@@ -59,7 +95,9 @@ export const GetInTouch = () => {
                   cols="10"
                   rows="10"
                 ></textarea>
-                <button className="btn btn-danger mt-4">Send</button>
+                <button className="btn btn-danger mt-4" onClick={sendEmail}>
+                  Send
+                </button>
               </div>
             </div>
           </div>
@@ -71,7 +109,10 @@ export const GetInTouch = () => {
               borderRadius: "1rem",
             }}
           >
-            <div className="right" style={{ marginTop: "2rem" }}>
+            <div
+              className="right"
+              style={{ marginTop: "2rem", padding: "32px" }}
+            >
               <h2 style={{ fontSize: "22px" }}>Contact Details</h2>
               <p style={{ marginTop: "1rem" }}>
                 Location : <br /> 123 Main Street, San Francisco, CA
@@ -89,63 +130,8 @@ export const GetInTouch = () => {
               </div>
             </div>
           </div>
-          {/* <div className="col">Column</div> */}
         </div>
       </div>
-      {/* <div className="row">
-        <div className="col-lg-6">
-          <div className="left d-flex flex-column">
-            <h1>Get in Touch</h1>
-            <div className="formss d-flex flex-column">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <textarea
-                name="Your Message"
-                placeholder="Your Message"
-                id=""
-                cols="30"
-                rows="10"
-              ></textarea>
-              <button className="btn btn-danger">Send</button>
-            </div>
-          </div>
-          <div className="col-lg-6">
-            <div className="right" style={{ backgroundColor: "#F0F0F0" }}>
-              <h2>Contact Details</h2>
-              <p>Location 123 Main Street, San Francisco, CA</p>
-              <div className="phone">
-                <p>Phone +1 (123) 456-7890</p>
-              </div>
-              <div className="email">
-                <p>
-                  Email :<br />
-                  hello@candidcontent.com
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* <div className="container">
-        <div className="row">
-          <div className="col-md-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Twitter</h5>
-                <p className="card-text">@yourtwitterhandle</p>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-4">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Facebook</h5>
-                <p className="card-text">facebook.com/yourfacebookpage</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

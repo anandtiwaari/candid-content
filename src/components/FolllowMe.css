@@ -185,3 +185,32 @@ h5 {
     height: 60px;
   }
 }
+
+.FollowMe {
+  /* Add styles that apply to all screen sizes here */
+
+  @media (max-width: 768px) {
+    /* Styles for screens with a width of 768px or less */
+    .box1 {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: 576px) {
+    /* Styles for screens with a width of 576px or less */
+    .content {
+      flex-direction: column;
+      text-align: center;
+    }
+    .image {
+      margin-bottom: 1rem;
+    }
+    .text {
+      margin-bottom: 1rem;
+    }
+    .icons {
+      margin-top: 1rem;
+    }
+  }
+}

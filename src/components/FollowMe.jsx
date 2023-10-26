@@ -2,17 +2,15 @@ import React from "react";
 import "./FolllowMe.css";
 import { AiFillInstagram, AiFillYoutube } from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
+import NeilImage from "../assets/NeilAdams.png";
 export const FollowMe = () => {
   return (
-    <div>
+    <div style={{ width: "-webkit-fill-available" }}>
       <section className="d-flex flex-wrap">
-        <div className="box1 box" style={{ margin: "auto" }}>
+        <div className="box1 box" style={{ width: "92%", margin: "auto" }}>
           <div className="content">
             <div className="image">
-              <img
-                src="https://lh3.googleusercontent.com/qmIk7rgxKB6jlAAKX813b09hyky6PUoWeDc-T4Pm8xzn-Nhl_KnbNlPW-CW1zmNpb1szHV8ZYX_J6_H3CiYJuV0=w16383"
-                alt="Profile Image"
-              />
+              <img src={NeilImage} alt="Profile Image" />
             </div>
             <div className="level">
               <p>PRO</p>

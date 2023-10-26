@@ -5,3 +5,20 @@
   width: -webkit-fill-available;
   z-index: 9999999;
 }
+.right_side {
+  margin: 50px;
+}
+
+.-carousel-indicator {
+  color: white;
+  background-color: "white" !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .right_side {
+    margin: 50px;
+  }
+  .right_side iframe {
+    width: 340px;
+  }
+}
