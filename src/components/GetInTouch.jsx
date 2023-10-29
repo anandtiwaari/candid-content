@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import "../components/contactForm.css";
 export const GetInTouch = () => {
   const form = useRef();
   const [formvalue, setFormValue] = useState({
@@ -40,66 +41,80 @@ export const GetInTouch = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            {" "}
-            <div className="left d-flex flex-column">
-              <h1
-                style={{
-                  textAlign: "left",
-                  fontSize: "30px",
-                  fontWeight: "bold",
-                }}
+            <section
+              className="contact-us"
+              id="contact-section"
+              style={{ padding: "20px" }}
+            >
+              <form
+                //   id="form-submit"
+                action="https://formspree.io/f/xqkvnoyv"
+                method="POST"
               >
-                Get in Touch
-              </h1>
-              <div className="formss d-flex flex-column">
-                <input
-                  type="text"
-                  placeholder="Your Name"
+                <div className="section-heading">
+                  <h4 className="contact_us">Contact us</h4>
+                </div>
+
+                <div className="inputField">
+                  <input
+                    type="name"
+                    name="name"
+                    id="name"
+                    placeholder="Your name"
+                    autocomplete="on"
+                    required
+                  />
+                  <span className="valid_info_name"></span>
+                </div>
+
+                <div className="inputField">
+                  <input
+                    type="number"
+                    name="phoneNumber"
+                    id="phone"
+                    placeholder="Your Phone number"
+                    required=""
+                  />
+                  <span className="valid_info_email"></span>
+                </div>
+                <div className="inputField">
+                  <input
+                    type="Email"
+                    name="email"
+                    id="email"
+                    placeholder="Your email"
+                    required=""
+                  />
+                  <span className="valid_info_email"></span>
+                </div>
+
+                <div className="inputField">
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Your message"
+                  ></textarea>
+                  <span className="valid_info_message"></span>
+                </div>
+
+                <button
+                  type="submit"
+                  id="form-submit"
+                  className="main-gradient-button button_contact  monteseraat_btn"
                   style={{
-                    boxShadow:
-                      "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
-                    marginTop: "1rem",
-                    padding: "8px",
-                    borderRadius: "12px",
-                    outline: "none",
+                    // backgroundColor: "red",
+                    color: "white",
+                    cursor: "pointer",
                   }}
-                  onChange={handleChange}
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  style={{
-                    boxShadow:
-                      "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
-                    marginTop: "1rem",
-                    padding: "8px",
-                    borderRadius: "12px",
-                    outline: "none",
-                  }}
-                  onChange={handleChange}
-                />
-                <textarea
-                  name="Your Message"
-                  style={{
-                    boxShadow:
-                      "rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px",
-                    marginTop: "1rem",
-                    padding: "8px",
-                    borderRadius: "12px",
-                    outline: "none",
-                    height: "10em",
-                    resize: "none",
-                  }}
-                  placeholder="Your Message"
-                  id=""
-                  cols="10"
-                  rows="10"
-                ></textarea>
-                <button className="btn btn-danger mt-4" onClick={sendEmail}>
-                  Send
+                  // onClick={() => {
+                  //   console.log("clcick");
+                  // }}
+                >
+                  Submit
                 </button>
-              </div>
-            </div>
+                {/* <div className="inputField btn"></div> */}
+              </form>
+            </section>
           </div>
           <div
             className="col-lg-6"
@@ -131,6 +146,75 @@ export const GetInTouch = () => {
             </div>
           </div>
         </div>
+        {/* <section
+          className="contact-us"
+          id="contact-section"
+          style={{ padding: "20px" }}
+        >
+          <form
+            //   id="form-submit"
+            action="https://formspree.io/f/moqodrre"
+            method="POST"
+          >
+            <div className="section-heading">
+              <h4 className="contact_us">Contact us</h4>
+            </div>
+
+            <div className="inputField">
+              <input
+                type="name"
+                name="name"
+                id="name"
+                placeholder="Your name"
+                autocomplete="on"
+                required
+              />
+              <span className="valid_info_name"></span>
+            </div>
+
+            <div className="inputField">
+              <input
+                type="number"
+                name="phoneNumber"
+                id="phone"
+                placeholder="Your Phone number"
+                required=""
+              />
+              <span className="valid_info_email"></span>
+            </div>
+            <div className="inputField">
+              <input
+                type="Email"
+                name="email"
+                id="email"
+                placeholder="Your email"
+                required=""
+              />
+              <span className="valid_info_email"></span>
+            </div>
+
+            <div className="inputField">
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Your message"
+              ></textarea>
+              <span className="valid_info_message"></span>
+            </div>
+
+            <button
+              type="submit"
+              id="form-submit"
+              className="main-gradient-button button_contact  monteseraat_btn"
+              style={{
+                color: "white",
+                cursor: "pointer",
+              }}
+            >
+              Submit
+            </button>
+          </form>
+        </section> */}
       </div>
     </div>
   );
