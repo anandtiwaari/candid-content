@@ -63,7 +63,7 @@ export const FollowMe = () => {
               <div>
                 <button
                   className="connect "
-                  style={{ marginLeft: "3rem" }}
+                  // style={{ marginLeft: "3rem" }}
                   type="button"
                 >
                   Connect

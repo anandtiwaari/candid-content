@@ -8,6 +8,9 @@
 .right_side {
   margin: 50px;
 }
+.left_side {
+  margin: 50px;
+}
 
 .-carousel-indicator {
   color: white;
@@ -16,9 +19,15 @@
 
 @media only screen and (max-width: 600px) {
   .right_side {
-    margin: 50px;
+    margin: 0px 13px !important;
   }
   .right_side iframe {
     width: 340px;
+  }
+  .left_side {
+    margin: 0px 13px !important;
+  }
+  .navbar-brand {
+    font-size: 17px;
   }
 }

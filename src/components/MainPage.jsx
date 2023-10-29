@@ -17,7 +17,7 @@ export const MainPage = () => {
           style={{
             backgroundColor: "#F0F0F0",
             display: "flex",
-            margin: "50px",
+            // margin: "50px",
           }}
         >
           <div
